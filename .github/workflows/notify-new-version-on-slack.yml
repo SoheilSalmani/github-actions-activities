@@ -1,0 +1,17 @@
+name: Notify new version on Slack
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify new version on Slack
+        uses: act10ns/slack@v1
+        with:
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          status: ${{ job.status }}
+          message: "New version released: `${{ github.ref_name }}`"
