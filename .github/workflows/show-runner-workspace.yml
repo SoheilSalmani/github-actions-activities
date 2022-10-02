@@ -1,0 +1,24 @@
+name: Show runner workspace
+
+on: [workflow_dispatch]
+
+jobs:
+  show_workspace:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Print `HOME`, `GITHUB_WORKSPACE` and `GITHUB_EVENT_PATH`
+        run: |
+          echo $HOME
+          echo $GITHUB_WORKSPACE
+          echo $GITHUB_EVENT_PATH
+
+      - name: List files in workspace
+        run: |
+          ls -la $GITHUB_WORKSPACE
+
+      - name: Print `events.json` content
+        run: |
+          cat $GITHUB_EVENT_PATH

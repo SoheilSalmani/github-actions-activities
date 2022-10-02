@@ -1,0 +1,12 @@
+name: Show payload content
+
+on:
+  repository_dispatch:
+    types: [show_payload]
+
+jobs:
+  show_payload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show payload content
+        run: echo '${{ toJSON(github.event.client_payload) }}'
