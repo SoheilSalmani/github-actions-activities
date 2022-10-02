@@ -1,0 +1,14 @@
+name: Translate issues
+
+on:
+  issue_comment:
+    types: [created]
+  issues:
+    types: [opened]
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Translate issues
+        uses: tomsun28/issues-translate-action@v2.6
