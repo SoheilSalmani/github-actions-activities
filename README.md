@@ -50,3 +50,9 @@
 12. Create a workflow to translate non-English issues content to English.
 
 13. Create a new repo and a workflow to lint all commit messages on pull requests.
+
+14. What are the different types of events in GitHub Actions?
+
+15. What are the security concerns with actions and secrets?
+
+16. What are the two types of runners?
